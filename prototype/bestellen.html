@@ -173,14 +173,38 @@
 
                     <div class="space-y-3">
                         <label
-                            class="flex items-center justify-between gap-4 border border-gray-200 rounded-xl px-4 py-3">
+                            class="flex items-center justify-between gap-4 border border-gray-200 rounded-xl px-4 py-3 cursor-pointer hover:border-green-500 transition">
                             <div class="flex items-start gap-3">
+                                <input type="radio" name="shipping" class="mt-1" checked>
                                 <div>
-                                    <p class="text-sm font-semibold text-gray-900">Ophaal punt</p>
-                                    <p class="text-xs text-gray-600">Het pakket word bezorgt naar een ophaal punt na
-                                        keuze</p>
+                                    <p class="text-sm font-semibold text-gray-900">Standaard bezorging</p>
+                                    <p class="text-xs text-gray-600">Levering binnen 3–5 werkdagen</p>
                                 </div>
                             </div>
+                            <div>€4,99</div>
+                        </label>
+                        <label
+                            class="flex items-center justify-between gap-4 border border-gray-200 rounded-xl px-4 py-3 cursor-pointer hover:border-green-500 transition">
+                            <div class="flex items-start gap-3">
+                                <input type="radio" name="shipping" class="mt-1">
+                                <div>
+                                    <p class="text-sm font-semibold text-gray-900">Express bezorging</p>
+                                    <p class="text-xs text-gray-600">Levering binnen 24 uur</p>
+                                </div>
+                            </div>
+                            <div>€6,99</div>
+                        </label>
+                        <label
+                            class="flex items-center justify-between gap-4 border border-gray-200 rounded-xl px-4 py-3 cursor-pointer hover:border-green-500 transition">
+                            <div class="flex items-start gap-3">
+                                <input type="radio" name="shipping" class="mt-1">
+                                <div>
+                                    <p class="text-sm font-semibold text-gray-900">Afhalen bij ophaal punt
+                                    </p>
+                                    <p class="text-xs text-gray-600">Vandaag nog ophalen</p>
+                                </div>
+                            </div>
+                            <div>Gratis</div>
                         </label>
                     </div>
                 </div>
