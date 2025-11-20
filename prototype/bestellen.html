@@ -128,11 +128,11 @@
                                     <span class="text-sm text-gray-600">Aantal:</span>
                                     <div
                                         class="inline-flex items-center border border-gray-300 rounded-lg overflow-hidden bg-gray-50">
-                                        <button type="button"
+                                        <button type="button" id="bestellen-min"
                                             class="px-3 py-1 text-lg font-semibold text-gray-600 hover:bg-gray-100">-</button>
-                                        <input type="number" value="1" min="1"
+                                        <input type="number" value="1" min="1" id="bestellen-value"
                                             class="w-12 text-center py-1 border-x border-gray-200 bg-white text-sm focus:outline-none">
-                                        <button type="button"
+                                        <button type="button" id="bestellen-plus"
                                             class="px-3 py-1 text-lg font-semibold text-gray-600 hover:bg-gray-100">+</button>
                                     </div>
                                 </div>
@@ -256,20 +256,16 @@
                         </div>
                         <div class="flex-1">
                             <p class="text-sm font-semibold text-gray-900">Kerst Eierbal</p>
-                            <p class="text-xs text-gray-600">Aantal: 1</p>
-                            <p class="text-sm font-semibold text-gray-900 mt-1">€12,49</p>
+                            <p class="text-xs text-gray-600" id="bestellen-aantal">Aantal: 1</p>
+                            <p class="text-sm font-semibold text-gray-900 mt-1" id="bestellen-prijs-aantal">€12,49</p>
                         </div>
                     </div>
 
-                    <div class="border-t border-gray-200 pt-3 mt-2 space-y-1 text-sm">
-                        <div class="flex justify-between text-gray-700">
-                            <span>Subtotaal</span>
-                            <span>€12,49</span>
-                        </div>
+                    <div class="pt-3 mt-2 space-y-1 text-sm">
                         <div
                             class="flex justify-between text-gray-900 font-bold text-base pt-2 border-t border-dashed border-gray-200 mt-2">
                             <span>Totaal</span>
-                            <span>€12,49</span>
+                            <span id="bestellen-prijs-intotaal">€12,49</span>
                         </div>
                     </div>
 
