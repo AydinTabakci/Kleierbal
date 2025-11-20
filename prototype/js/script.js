@@ -1,4 +1,14 @@
-(() => {
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById('nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+
+    if (btn && menu) {
+        btn.addEventListener('click', () => {
+            const opened = menu.classList.toggle('hidden') === false;
+            btn.setAttribute('aria-expanded', String(opened));
+        });
+    }
+
     const BASE_PRICE = 12.49;
 
     const minusBtn = document.getElementById('bestellen-min');
@@ -84,4 +94,4 @@
     shippingRadios.forEach(r => r.addEventListener('change', updateTotals));
 
     updateTotals();
-})();
+});
