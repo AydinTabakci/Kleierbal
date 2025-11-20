@@ -8,27 +8,57 @@
     <link rel="icon" type="image/x-icon" href="images/Kersteierbal_logo_nieuw.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="js/script.js" defer></script>
 </head>
 
 <body class="font-sans">
-    <header class="bg-red-800 text-white px-6 py-4">
-        <nav class="mx-auto flex items-center justify-between">
-            <div class="flex items-center gap-8">
+    <header class="bg-red-800 text-white px-4 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+            <a href="/" class="flex items-center gap-3">
                 <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center">
                     <img class="w-36 h-36 mr-[2px] flex-no-shrink fill-current object-cover"
-                        src="images/Kersteierbal_logo_nieuw.svg" alt="logo">
+                        src="../images/Kersteierbal_logo_nieuw.svg" alt="logo">
                 </div>
-                <ul class="flex gap-6 text-2xl">
-                    <li><a href="/" class="hover:text-white/70 transition duration-300">Home</a></li>
-                    <li><a href="/over.html" class="hover:text-white/70 transition duration-300">Over ons</a></li>
-                    <li><a href="/minigame.html" class="hover:text-white/70 transition duration-300">Minigame</a></li>
-                </ul>
-            </div>
-            <a href="/bestellen.html"
-                class="bg-green-600 hover:bg-green-700 text-white px-8 py-2 rounded-lg font-bold transition text-2xl">
-                Bestellen
+                <span class="sr-only md:not-sr-only text-xl md:text-2xl font-bold">Kerst Eierballen</span>
             </a>
-        </nav>
+
+            <nav class="hidden md:flex items-center gap-8">
+                <ul class="flex gap-6 text-lg md:text-2xl">
+                    <li><a href="/" class="hover:text-white/70 transition duration-200">Home</a></li>
+                    <li><a href="/over.html" class="hover:text-white/70 transition duration-200">Over ons</a></li>
+                    <li><a href="/minigame.html" class="hover:text-white/70 transition duration-200">Minigame</a></li>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="/bestellen.html"
+                    class="hidden md:inline-block bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-bold transition text-lg">
+                    Bestellen
+                </a>
+
+                <button id="nav-toggle" aria-controls="mobile-menu" aria-expanded="false"
+                    class="md:hidden inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white">
+                    <span class="sr-only">Open menu</span>
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden mt-3 px-4 pb-4">
+            <div class="bg-red-800 rounded-lg border border-red-700 p-4 space-y-3">
+                <a href="/" class="block text-lg hover:text-white/80">Home</a>
+                <a href="/over.html" class="block text-lg hover:text-white/80">Over ons</a>
+                <a href="/minigame.html" class="block text-lg hover:text-white/80">Minigame</a>
+                <a href="/bestellen.html"
+                    class="block mt-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md font-bold text-center">
+                    Bestellen
+                </a>
+            </div>
+        </div>
     </header>
 
     <div class="relative bg-gradient-to-b from-green-100/80 via-white/90 to-red-100/80 py-20 px-6 overflow-hidden">
