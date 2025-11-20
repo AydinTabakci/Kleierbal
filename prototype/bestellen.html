@@ -271,6 +271,44 @@
                         </div>
                     </div>
 
+
+
+                    <div id="donation-box" class="mt-4 bg-green-50 border border-green-100 rounded-lg p-4">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fa-solid fa-hand-holding-heart text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-semibold text-green-700">Donatie</h3>
+                                <p class="text-xs text-gray-600">Steun het goede doel — kies een bedrag of vul zelf in.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap items-center gap-2 mb-3">
+                            <span class="text-sm text-gray-700 mr-2">Kies bedrag:</span>
+                            <button type="button" id="donatie-5"
+                                class="px-3 py-1 rounded-lg border border-green-200 bg-white text-green-700 text-sm font-semibold hover:bg-green-50 transition">€5</button>
+                            <button type="button" id="donatie-10"
+                                class="px-3 py-1 rounded-lg border border-green-200 bg-white text-green-700 text-sm font-semibold hover:bg-green-50 transition">€10</button>
+                            <button type="button" id="donatie-25"
+                                class="px-3 py-1 rounded-lg border border-green-200 bg-white text-green-700 text-sm font-semibold hover:bg-green-50 transition">€25</button>
+                        </div>
+
+                        <form id="donation-form" class="flex items-center gap-2" role="form"
+                            aria-label="Donatieformulier" onsubmit="return false;">
+                            <label for="amount" class="sr-only">Ander bedrag</label>
+                            <input id="amount" name="amount" type="number" min="0" step="0.01" inputmode="decimal"
+                                placeholder="Ander bedrag (€)"
+                                class="w-full text-sm border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-200" />
+                            <button type="button" id="donate-submit"
+                                class="bg-green-800 hover:bg-green-900 text-white px-3 py-2 rounded-lg text-sm font-semibold">Doneer</button>
+                        </form>
+
+                        <p class="text-xs text-gray-500 mt-2">Veilig betalen — iDEAL / Creditcard. Je ontvangt een
+                            bevestiging per e-mail.</p>
+                    </div>
+
                     <div class="pt-3 mt-2 space-y-1 text-sm">
                         <div
                             class="flex justify-between text-gray-900 font-bold text-base pt-2 border-t border-dashed border-gray-200 mt-2">
