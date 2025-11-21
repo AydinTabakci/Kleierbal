@@ -162,16 +162,80 @@
                 </div>
             </div>
 
-            <div class="flex gap-4 justify-center mt-12">
-                <a href="/over.html"
-                    class="bg-red-800 hover:bg-red-900 text-white px-8 py-4 rounded-lg font-bold transition">
-                    Lees meer
-                </a>
-                <a href="/bestellen.html"
-                    class="border-4 border-green-800 hover:bg-green-800 text-green-800 font-bold hover:text-white px-8 py-3 rounded-lg transition">
-                    Bestellen
-                </a>
+            <div class="w-[500px] mt-32 mx-auto">
+                <div id="carousel" class="relative w-full">
+                    <div class="overflow-hidden rounded-xl border border-gray-300">
+                        <div id="carousel-track" class="flex transition-transform duration-500 will-change-transform">
+                            <img src="images/eierbal-topview.jpg" class="min-w-full h-64 md:h-80 object-cover"
+                                alt="Eierbal top view">
+                            <img src="images/eierbal.jpg" class="min-w-full h-64 md:h-80 object-cover"
+                                alt="Eierbal side view">
+                        </div>
+                    </div>
+
+                    <button id="prev" aria-label="Vorige"
+                        class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 text-red-800 p-2 rounded-full shadow hover:bg-white">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button id="next" aria-label="Volgende"
+                        class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 text-red-800 p-2 rounded-full shadow hover:bg-white">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <div id="carousel-dots" class="flex gap-2 justify-center mt-3">
+                    </div>
+                </div>
             </div>
+
+            <script>
+                (function () {
+                    const track = document.getElementById('carousel-track');
+                    const slides = Array.from(track.children);
+                    const prev = document.getElementById('prev');
+                    const next = document.getElementById('next');
+                    const dotsContainer = document.getElementById('carousel-dots');
+                    let index = 0;
+                    const total = slides.length;
+                    let intervalId;
+
+                    // build dots
+                    slides.forEach((_, i) => {
+                        const btn = document.createElement('button');
+                        btn.className = 'w-2 h-2 rounded-full bg-gray-300';
+                        btn.setAttribute('aria-label', 'Slide ' + (i + 1));
+                        btn.dataset.index = i;
+                        btn.addEventListener('click', () => { goTo(i); resetAuto(); });
+                        dotsContainer.appendChild(btn);
+                    });
+                    const dots = Array.from(dotsContainer.children);
+
+                    function update() {
+                        track.style.transform = `translateX(${-index * 100}%)`;
+                        dots.forEach((d, i) => d.classList.toggle('bg-red-800', i === index));
+                    }
+
+                    function goTo(i) {
+                        index = (i + total) % total;
+                        update();
+                    }
+
+                    prev.addEventListener('click', () => { goTo(index - 1); resetAuto(); });
+                    next.addEventListener('click', () => { goTo(index + 1); resetAuto(); });
+
+                    function startAuto() {
+                        intervalId = setInterval(() => { goTo(index + 1); }, 4500);
+                    }
+                    function resetAuto() {
+                        clearInterval(intervalId);
+                        startAuto();
+                    }
+
+                    // init
+                    update();
+                    startAuto();
+                })();
+            </script>
+
         </div>
         <div class="max-w-6xl mx-auto mt-32">
             <h2 class="text-4xl text-red-600 font-bold text-center mb-12">

@@ -156,4 +156,24 @@ document.addEventListener("DOMContentLoaded", () => {
     shippingRadios.forEach(r => r.addEventListener('change', updateTotals));
 
     updateTotals();
+
+    const track = document.getElementById("carousel-track");
+    const prev = document.getElementById("prev");
+    const next = document.getElementById("next");
+    let index = 0;
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    prev.addEventListener("click", () => {
+        index = (index - 1 + 2) % 2;
+        updateCarousel();
+    });
+
+    next.addEventListener("click", () => {
+        index = (index + 1) % 2;
+        updateCarousel();
+    });
+
 });
